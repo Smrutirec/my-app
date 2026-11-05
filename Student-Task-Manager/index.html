@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div>
+            <h1>Student Task Manager</h1>
+            <p>Organize your studies. Achieve your goals.</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="stats">
+            <div class="stat-card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Pending Tasks</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Completed Tasks</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </section>
+
+        <section class="task-form">
+            <h2 id="formTitle">Add New Task</h2>
+
+            <form id="taskForm">
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="Enter task name"
+                    required
+                >
+
+                <input
+                    type="date"
+                    id="taskDate"
+                    required
+                >
+
+                <select id="taskPriority">
+                    <option value="High">High Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="Low">Low Priority</option>
+                </select>
+
+                <button type="submit" id="submitBtn">
+                    Add Task
+                </button>
+
+                <button type="button" id="cancelEdit" hidden>
+                    Cancel Edit
+                </button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <div class="task-heading">
+                <h2>My Tasks</h2>
+                <input
+                    type="search"
+                    id="searchInput"
+                    placeholder="Search tasks..."
+                >
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="All">
+                    All
+                </button>
+                <button class="filter-btn" data-filter="Pending">
+                    Pending
+                </button>
+                <button class="filter-btn" data-filter="Completed">
+                    Completed
+                </button>
+            </div>
+
+            <div id="taskList"></div>
+            <p id="emptyMessage">No tasks available. Add your first task!</p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Student Task Manager | Developed using HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
